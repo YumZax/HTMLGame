@@ -9,7 +9,8 @@ var Player = class Player {
         this.isMovingDown = false;
         this.isMovingLeft = false;
         this.isMovingRight = false;
-        this.updated = true;
+        this.updated = false;
+        this.collides = false;
         this.style = style
     }
 
@@ -26,7 +27,12 @@ var Player = class Player {
     }
 
     getCoords(){
-        return [this.x, this.y, this.w, this.h]
+        return {
+            "x": this.x,
+            "y": this.y,
+            "w": this.w,
+            "h": this.h
+        }
     }
 
     getDimensions(){

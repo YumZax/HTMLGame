@@ -20,7 +20,7 @@ var Display = class Display{
             let elem = this.elementQueue[i];
             let coords = elem.getCoords()
             this.ctx.fillStyle = elem.getStyle()
-            this.ctx.fillRect(coords[0], coords[1], coords[2], coords[3])
+            this.ctx.fillRect(coords['x'], coords['y'], coords['w'], coords['h'])
         }
     }
 
