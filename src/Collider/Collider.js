@@ -20,6 +20,8 @@ var Collider = class Collider{
     collides(iCoords, jCoords){
         let ix = iCoords['x']
         let iy = iCoords['y']
+        let iw = iCoords['w']
+        let ih = iCoords['h']
         let jx = jCoords['x']
         let jy = jCoords['y']
         let jh = jCoords['h']
@@ -27,10 +29,15 @@ var Collider = class Collider{
         let o = this.offset
         
         return {
-          "right": (ix + o == jx && ix - o < jx + jw && iy >= jy && iy < jy+jh),
-          "left": (ix == jx + jw && ix - o < jx + jw && iy >= jy && iy < jy+jh),
-          "top": (iy == jy + jh && iy - o < jy + jh && ix >= jx && ix < jx + jw),
-          "bottom": (iy + o == jy  && iy - o < jy + jh && ix >= jx && ix < jx + jw)
+          "right": (ix + o === jx && ix - o < jx + jw && iy >= jy && iy < jy+jh),
+          "left": (ix === jx + jw && ix - o < jx + jw && iy >= jy && iy < jy+jh),
+          "top": (iy === jy + jh && iy - o < jy + jh && ix >= jx && ix < jx + jw),
+          "bottom": (iy + o === jy  && iy - o < jy + jh && ix >= jx && ix < jx + jw),
+          "topLeftCorner": (ix === jx + jw && iy === jy + jh),
+          "topRightCorner": (ix + iw === jx && iy === jy + jh),
+          "bottomLeftCorner": (ix === jx + jw && iy + ih === jy),
+          "bottomRightCorner": (ix + iw === jx && iy + ih === jy),
+
         }
     }
 }

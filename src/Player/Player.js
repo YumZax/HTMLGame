@@ -10,7 +10,16 @@ var Player = class Player {
         this.isMovingLeft = false;
         this.isMovingRight = false;
         this.updated = false;
-        this.collides = false;
+        this.collisions = {
+            "top": false,
+            "bottom": false, 
+            "right": false, 
+            "left": false, 
+            "topRightCorner": false,
+            "topLeftCorner": false,
+            "bottomRightCorner": false,
+            "bottomLeftCorner": false,
+        };
         this.style = style
     }
 
