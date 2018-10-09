@@ -1,10 +1,11 @@
-var Player = class Player {
+var Block = class Block {
         
     constructor(x, y, w, h, style){
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
+
         this.isMovingUp = false;
         this.isMovingDown = false;
         this.isMovingLeft = false;
@@ -21,13 +22,13 @@ var Player = class Player {
             "bottomLeftCorner": false,
         };
         this.style = style
+        
     }
 
     move(dx, dy){
         this.x += dx;
         this.y += dy;
         this.updated = true;
-        //this.inflate(1, 1)
     }
 
     inflate(dw, dh){
@@ -48,8 +49,8 @@ var Player = class Player {
         return [this.w, this.h]
     }
 
-    unsetUpdated(){
-        this.updated = false; 
+    setUpdated(bool){
+        this.updated = bool; 
     }
 
     getStyle(){
@@ -57,4 +58,4 @@ var Player = class Player {
     }
 }
 
-export {Player}
+export {Block}

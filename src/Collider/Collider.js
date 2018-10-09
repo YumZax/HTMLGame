@@ -7,8 +7,9 @@ var Collider = class Collider{
 
     checkPlayerCollisions(){
         for (let i in this.elementQueue){
-                let collisions = this.collides(this.player.getCoords(), this.elementQueue[i].getCoords());
+                let collisions = this.computePlayerCollisions(this.player.getCoords(), this.elementQueue[i].getCoords());
                 this.player.collisions = collisions
+                
                 if (collisions.collidesLeft || collisions.collidesRight || collisions.collidesTop || collisions.collidesBottom){
                     return true;
                 }
@@ -17,7 +18,7 @@ var Collider = class Collider{
         return false;
     }
 
-    collides(iCoords, jCoords){
+    computePlayerCollisions(iCoords, jCoords){
         let ix = iCoords['x']
         let iy = iCoords['y']
         let iw = iCoords['w']
