@@ -18,7 +18,7 @@ var main = function () {
     window.setInterval(() => {
         refresh(display, playerControls, collider)
         
-    }, 40)
+    }, 1000/60)
 
 }
 
