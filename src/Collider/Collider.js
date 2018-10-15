@@ -1,4 +1,4 @@
-var Collider = class Collider{
+class Collider{
     constructor(player, elems){
         this.offset = 10;
         this.player = player;

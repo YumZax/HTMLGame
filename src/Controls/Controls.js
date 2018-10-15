@@ -1,4 +1,4 @@
-var Controls = class Controls {
+class Controls {
 
     constructor(player) {
         this.PLAYER_SPEED_X = 10

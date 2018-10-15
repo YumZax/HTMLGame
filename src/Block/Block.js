@@ -1,4 +1,4 @@
-var Block = class Block {
+class Block {
         
     constructor(x, y, w, h, style){
         this.x = x;

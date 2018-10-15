@@ -1,4 +1,4 @@
-var Display = class Display{
+class Display{
 
     constructor(player, objects){
         this.player = player;
