@@ -41,6 +41,10 @@ class Collider{
 
         }
     }
+
+    addToQueue(element){
+        this.elementQueue.push(element)
+    }
 }
 
 export {Collider};

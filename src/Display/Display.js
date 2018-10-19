@@ -34,6 +34,11 @@ class Display{
         this.elementQueue.push(element)
     }
 
+    removeFromQueue(elemsToDelete){
+        for (let i in elemsToDelete){
+            this.elementQueue = this.elementQueue.filter(elem => elem.id !== elemsToDelete[i].id)
+        } 
+    }
 }
 
 export {Display}

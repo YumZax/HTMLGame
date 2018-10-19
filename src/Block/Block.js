@@ -1,6 +1,13 @@
 class Block {
         
     constructor(x, y, w, h, style){
+        function uuidv4() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+              var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+              return v.toString(16);
+            });
+        }
+
         this.x = x;
         this.y = y;
         this.w = w;
@@ -10,6 +17,7 @@ class Block {
         this.isMovingDown = false;
         this.isMovingLeft = false;
         this.isMovingRight = false;
+       
         this.updated = false;
         this.collisions = {
             "top": false,
@@ -22,7 +30,8 @@ class Block {
             "bottomLeftCorner": false,
         };
         this.style = style
-        
+       
+        this.id = uuidv4()
     }
 
     move(dx, dy){
